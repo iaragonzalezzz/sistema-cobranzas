@@ -1,0 +1,122 @@
+:root {
+  --color-dorado: #d4a017;
+  --color-gris-fondo: #f9f9f9;
+  --color-gris-claro: #f1f1f1;
+  --color-texto: #1c1b19;
+  --color-blanco: #ffffff;
+  --color-verde-inc: #d4f4dd;
+}
+
+body {
+  background-color: var(--color-gris-fondo);
+  color: var(--color-texto);
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* --- Navbar --- */
+.navbar {
+  background-color: var(--color-dorado) !important;
+  padding: 0.6rem 1.2rem;
+}
+.navbar-brand,
+.empresa-nombre {
+  color: var(--color-blanco) !important;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.navbar-brand img {
+  height: 42px;
+  width: auto;
+  margin-right: 10px;
+  border-radius: 4px;
+}
+
+/* --- Secciones (cards principales) --- */
+section {
+  background: var(--color-blanco);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+h1, h2, h3, h4 {
+  color: var(--color-dorado);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* --- Botones --- */
+.btn-primary {
+  background-color: var(--color-dorado);
+  border: none;
+  font-weight: 500;
+  padding: 0.6rem 1.2rem;
+}
+.btn-primary:hover {
+  background-color: #b68913;
+}
+.btn-outline-dark {
+  border-color: var(--color-dorado);
+  color: var(--color-dorado);
+  font-weight: 500;
+}
+.btn-outline-dark:hover {
+  background-color: var(--color-dorado);
+  color: var(--color-blanco);
+}
+.btn-outline-danger {
+  border-color: #d9534f;
+  color: #d9534f;
+}
+.btn-outline-danger:hover {
+  background-color: #d9534f;
+  color: var(--color-blanco);
+}
+
+/* --- Tablas --- */
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+}
+.table thead {
+  background-color: var(--color-dorado);
+  color: var(--color-blanco);
+}
+.table tbody tr:hover {
+  background-color: var(--color-gris-claro);
+}
+
+/* --- Incremento: verde suave --- */
+.cuota-inc {
+  background-color: #d4f4dd !important; /* Verde clarito */
+}
+
+/* --- Estado de pago --- */
+td.estado {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+td.estado:contains("✔️") {
+  color: green;
+}
+td.estado:contains("❌") {
+  color: red;
+}
+
+/* --- Footer --- */
+.footer {
+  background-color: var(--color-blanco);
+  border-top: 1px solid #e5e5e5;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+.footer img {
+  opacity: 0.9;
+}
