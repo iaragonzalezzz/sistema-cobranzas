@@ -3,28 +3,27 @@ import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
 
-import authRoutes from "./routes/auth.js";
-import clientesRoutes from "./routes/clientes.js";
-import aumentosRoutes from "./routes/aumentos.js";
-import pagosRoutes from "./routes/pagos.js";
+import authRoutes from "../routes/auth.js";
+import clientesRoutes from "../routes/clientes.js";
+import aumentosRoutes from "../routes/aumentos.js";
+import pagosRoutes from "../routes/pagos.js";
 
 dotenv.config();
-
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Servir frontend desde la raíz del proyecto
-const frontendPath = path.resolve("frontend");
+// --- SERVIR FRONTEND ---
+const frontendPath = path.resolve("frontend"); // <-- esto funciona local y en Vercel
 app.use(express.static(frontendPath));
 
-// Rutas API
+// --- RUTAS API ---
 app.use("/auth", authRoutes);
 app.use("/clientes", clientesRoutes);
 app.use("/aumentos", aumentosRoutes);
 app.use("/pagos", pagosRoutes);
 
-// SPA catch-all
+// --- SPA CATCH-ALL ---
 app.get("*", (req, res) => {
   res.sendFile(path.join(frontendPath, "index.html"));
 });
