@@ -16,18 +16,24 @@ app.use(cors());
 app.use(express.json());
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const frontendPath = path.join(__dirname, "../frontend");
+const frontendPath = path.join(__dirname, "../../frontend"); // sube 2 niveles hasta la raíz
 
-// Servir frontend desde la carpeta frontend
+// =====================
+// Servir archivos estáticos
+// =====================
 app.use(express.static(frontendPath));
 
+// =====================
 // Rutas API
+// =====================
 app.use("/auth", authRoutes);
 app.use("/clientes", clientesRoutes);
 app.use("/aumentos", aumentosRoutes);
 app.use("/pagos", pagosRoutes);
 
-// Catch-all para SPA
+// =====================
+// SPA Catch-all
+// =====================
 app.get("*", (req, res) => {
   res.sendFile(path.join(frontendPath, "index.html"));
 });
@@ -39,4 +45,3 @@ if (!esVercel) {
   const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => console.log(`✅ Servidor corriendo en http://localhost:${PORT}`));
 }
-

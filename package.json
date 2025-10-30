@@ -1,10 +1,10 @@
 {
   "name": "sistema-cobranzas",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "backend/api/server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "start": "node backend/api/server.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.7.1",
